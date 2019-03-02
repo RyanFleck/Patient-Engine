@@ -1,5 +1,4 @@
-// tag::whole[]
-// tag::opening[]
+
 apply plugin: 'war'
 apply plugin: 'liberty'
 
@@ -12,9 +11,7 @@ targetCompatibility = 1.8
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-// end::opening[]
 
-// tag::buildscript[]
 buildscript {
     repositories {
         mavenCentral()
@@ -23,33 +20,25 @@ buildscript {
         classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:2.6.3'
     }
 }
-// end::buildscript[]
 
-// tag::repositories[]
 repositories {
     mavenCentral()
 }
-// end::repositories[]
 
-// tag::dependencies[]
 dependencies {
     providedCompile group:'javax.servlet', name:'javax.servlet-api', version:'3.1.0'
     testCompile group:'commons-httpclient', name:'commons-httpclient', version:'3.1'
     testCompile group:'junit', name:'junit', version:'4.12'
     libertyRuntime group:'io.openliberty', name:'openliberty-runtime', version:'[17.0.0.4,)'
 }
-// end::dependencies[]
 
-// tag::ext[]
 ext {
     appName = project.name
     testServerHttpPort = 9080
     testServerHttpsPort = 9443
     warContext = appName
 }
-// end::ext[]
 
-// tag::liberty[]
 liberty {
     server {
         name = "${appName}Server"
@@ -63,15 +52,11 @@ liberty {
         }
     }
 }
-// end::liberty[]
 
-// tag::war[]
 war {
     archiveName = "${baseName}.${extension}"
 }
-// end::war[]
 
-// tag::tests[]
 test {
     reports.html.destination = file("$buildDir/reports/unit")
     reports.junitXml.destination = file("$buildDir/test-results/unit")
@@ -88,9 +73,7 @@ task integrationTest(type: Test) {
 
     systemProperties = ['liberty.test.port': testServerHttpPort, 'war.name': warContext]
 }
-// end::tests[]
 
-// tag::open[]
 task openBrowser {
     description = 'Open browser to http://localhost:8080/${warContext}'
     doLast {
@@ -105,14 +88,11 @@ task openTestReport {
         java.awt.Desktop.desktop.browse file("$buildDir/reports/it/index.html").toURI()
     }
 }
-// end::open[]
 
-// tag::depends[]
 clean.dependsOn 'libertyStop'
 check.dependsOn 'integrationTest'
 integrationTest.dependsOn 'libertyStart'
 integrationTest.finalizedBy 'libertyStop'
 integrationTest.finalizedBy 'openTestReport'
 libertyPackage.dependsOn 'libertyStop'
-// end::depends[]
-// end::whole[]
+
