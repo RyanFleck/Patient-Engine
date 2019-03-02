@@ -10,7 +10,7 @@
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
  // end::comment[]
-package io.openliberty.guides.hello;
+package io.rcf.patientengine;
 
 import java.io.IOException;
 

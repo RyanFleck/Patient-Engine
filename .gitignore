@@ -25,6 +25,7 @@ hs_err_pid*
 README.html
 .DS_Store
 build/
+dist/
 
 target/
 !.mvn/wrapper/maven-wrapper.jar

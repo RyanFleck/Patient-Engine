@@ -10,7 +10,7 @@
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
 // end::copyright[]
-package io.openliberty.guides.hello.it;
+package io.rcf.patientengine.it;
 
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
