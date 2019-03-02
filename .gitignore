@@ -24,6 +24,7 @@ hs_err_pid*
 .gradle/
 README.html
 .DS_Store
+build/
 
 target/
 !.mvn/wrapper/maven-wrapper.jar
