@@ -6,8 +6,8 @@ Dungeon management system with web-based local web GUI for phones &amp; computer
 1. Intended for use in three ways:
     1. Friends gathered at table, utilizing system to manage inventory and stats of characters.
     1. Friends online, utilizing system to play:
-      1. In real-time, together.
-      1. Turn by turn over a working day.
+        1. In real-time, together.
+        1. Turn by turn over a working day.
 1. API for adding/manipulating entries in the item, spell, monster manuals.
 1. Rich single-page web application utilizing websockets for realtime events.
 1. Utilize [Web Speech API](https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API) to transcribe player/dm chatter to a log that can be read when idle players need to catch up.
